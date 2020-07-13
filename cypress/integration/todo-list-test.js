@@ -19,6 +19,19 @@ describe('Fluxo de Todo List', function () {
         cy.get('.add-task-btn').click()
     })
 
+    it ('Clica em Editar e Edita a task', function () {        
+        cy.get('.btn-edit').click()
+        cy.get('.task-input')
+            .type('hahaha')
+            .should('have.value', 'hahahahahaha')
+    })
+
+    it ('Adiciona a task ao clicar em Atualizar', function () {        
+        cy.get('.add-task-btn')
+            .contains('Atualizar')
+            .click()
+    })
+
     it ('Deleta a task adicionada', function () {        
         cy.get('.btn-delete').click()
     })
